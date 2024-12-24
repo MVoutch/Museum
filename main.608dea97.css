@@ -1428,4 +1428,8 @@ table {
     font-weight: 300;
     line-height: 140.63%;
 }
+
+.link-content-fix {
+    overflow: hidden;
+}
 /*# sourceMappingURL=index.971c2ea4.css.map */
