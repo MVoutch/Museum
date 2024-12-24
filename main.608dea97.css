@@ -91,9 +91,19 @@ table {
 }
 
 .header__bg {
-    background: url("header-bg.8ec50a9a.webp") bottom / cover no-repeat;
     width: 100%;
     height: 300px;
+    position: relative;
+}
+
+.header__bg img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    top: 0;
+    left: 0;
 }
 
 @media (width >= 640px) {
