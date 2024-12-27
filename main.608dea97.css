@@ -469,7 +469,7 @@ table {
     object-fit: cover;
     top: 0;
     left: 0;
-    background: url("header-bg.8ec50a9a.avif");
+    background: url("header-bg.8ec50a9a_11.webp");
     background-size: cover;
 }
 
@@ -599,15 +599,6 @@ table {
     row-gap: 50px;
     padding-top: 50px;
     display: grid;
-}
-
-header::before {
-    content: "as";
-    position: absolute;
-    width: 90vw;
-    height: 90vh;
-    background: #fff;
-    z-index: -100;
 }
 
 @media (width >= 640px) {
