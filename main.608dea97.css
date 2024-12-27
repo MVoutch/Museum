@@ -469,7 +469,7 @@ table {
     object-fit: cover;
     top: 0;
     left: 0;
-    background: url("header-bg.8ec50a9a_11.webp");
+    background: url("header-bg.8ec50a9a_11.webp") no-repeat center center;
     background-size: cover;
 }
 
