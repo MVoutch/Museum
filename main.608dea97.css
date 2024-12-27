@@ -602,11 +602,10 @@ table {
 }
 
 main::before {
-    content: "";
+    content: "as";
     position: absolute;
     width: 90vw;
     overflow: hidden;
-    opacity: 0;
     height: 90vh;
     background: #fff;
     z-index: -100;
