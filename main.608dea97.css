@@ -454,14 +454,14 @@ table {
 .header__bg {
     width: 100%;
     height: 300px;
-    top: 0;
-    left: 0;
     position: relative;
     content-visibility: auto;
+    z-index: -1;
     contain: size layout paint;
 }
 
-.header__bg img {
+.header__bg::after {
+    content: "";
     position: absolute;
     width: 100%;
     height: 100%;
@@ -469,7 +469,8 @@ table {
     object-fit: cover;
     top: 0;
     left: 0;
-    background: #4b4b4b;
+    background: url("header-bg.8ec50a9a.avif");
+    background-size: cover;
 }
 
 @media (width >= 640px) {
