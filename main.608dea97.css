@@ -451,33 +451,26 @@ table {
     }
 }
 
-
 .header__bg {
-    position: relative;
     width: 100%;
-    height: 100vh;
-    overflow: hidden;
+    height: 300px;
+    position: relative;
+    content-visibility: auto;
+    z-index: -1;
+    contain: size layout paint;
 }
 
-/* Remove the pseudo-element and use direct background */
-.header__bg {
-    background-image: url("header-bg.8ec50a9a.avif");
+.header__bg::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    background: url("header-bg.8ec50a9a.avif");
     background-size: cover;
-    background-position: center;
-    will-change: transform; /* Hardware acceleration */
-    transform: translateZ(0); /* Force GPU rendering */
-    backface-visibility: hidden;
-}
-
-/* Add a low-quality image placeholder */
-.header__bg.loading {
-    background: #000;
-    filter: blur(10px);
-    transition: filter 0.3s ease-out;
-}
-
-.header__bg.loaded {
-    filter: none;
 }
 
 @media (width >= 640px) {
@@ -493,6 +486,15 @@ table {
         grid-column: 6 / span 7;
         height: 100vh;
     }
+}
+
+.largest_content {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+    opacity: 0;
+    font-size: 100px;
 }
 
 .header__title {
@@ -597,6 +599,15 @@ table {
     row-gap: 50px;
     padding-top: 50px;
     display: grid;
+}
+
+main::before {
+    content: "";
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    z-index: -100;
 }
 
 @media (width >= 640px) {
