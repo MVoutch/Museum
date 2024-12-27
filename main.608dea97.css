@@ -601,11 +601,10 @@ table {
     display: grid;
 }
 
-main::before {
+header::before {
     content: "as";
     position: absolute;
     width: 90vw;
-    overflow: hidden;
     height: 90vh;
     background: #fff;
     z-index: -100;
