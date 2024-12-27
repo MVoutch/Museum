@@ -451,26 +451,33 @@ table {
     }
 }
 
+
 .header__bg {
-    width: 100%;
-    height: 300px;
     position: relative;
-    content-visibility: auto;
-    z-index: -1;
-    contain: size layout paint;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
 }
 
-.header__bg::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    object-fit: cover;
-    top: 0;
-    left: 0;
-    background: url("header-bg.8ec50a9a.avif");
+/* Remove the pseudo-element and use direct background */
+.header__bg {
+    background-image: url("header-bg.8ec50a9a.avif");
     background-size: cover;
+    background-position: center;
+    will-change: transform; /* Hardware acceleration */
+    transform: translateZ(0); /* Force GPU rendering */
+    backface-visibility: hidden;
+}
+
+/* Add a low-quality image placeholder */
+.header__bg.loading {
+    background: #000;
+    filter: blur(10px);
+    transition: filter 0.3s ease-out;
+}
+
+.header__bg.loaded {
+    filter: none;
 }
 
 @media (width >= 640px) {
