@@ -460,7 +460,8 @@ table {
     contain: size layout paint;
 }
 
-.header__bg img {
+.header__bg::after {
+    content: "";
     position: absolute;
     width: 100%;
     height: 100%;
@@ -468,6 +469,8 @@ table {
     object-fit: cover;
     top: 0;
     left: 0;
+    background: url("header-bg.8ec50a9a_11.webp") no-repeat center center;
+    background-size: cover;
 }
 
 @media (width >= 640px) {
