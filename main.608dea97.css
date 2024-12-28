@@ -470,6 +470,8 @@ table {
     left: 0;
     background: url("header-bg.8ec50a9a_11.webp") no-repeat center center;
     background-size: cover;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
 }
 
 @media (width >= 640px) {
