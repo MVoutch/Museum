@@ -79,3 +79,27 @@ function checkViewportWidth() {
 
 checkViewportWidth();
 window.addEventListener('resize', checkViewportWidth);
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    function loadHighQualityImage(img) {
+        const currentSrc = img.src;
+        const highQualitySrc = currentSrc.replace('.webp', '-preload.webp');
+
+        const tempImage = new Image();
+
+        tempImage.onload = function() {
+            img.src = highQualitySrc;
+        };
+
+        tempImage.src = highQualitySrc;
+    }
+
+    const images = document.querySelectorAll('img');
+
+    images.forEach(img => {
+        if (img.src.endsWith('.webp')) {
+            loadHighQualityImage(img);
+        }
+    });
+});
