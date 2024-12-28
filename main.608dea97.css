@@ -457,7 +457,6 @@ table {
     position: relative;
     content-visibility: auto;
     z-index: -1;
-    contain: size layout paint;
 }
 
 .header__bg::after {
